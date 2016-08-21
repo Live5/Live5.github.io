@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hello World," />
+  <meta name="keywords" content="SQL," />
 
 
 
@@ -84,22 +84,90 @@
 
 
 
-<meta name="description" content="Welcome to my space!
-第一篇博客随便说两句
-   就像litten所说，当在github page上自己的博客加载下来时，突然有种错综复杂的恍惚感。是的，它不是qq空间，不是新浪博客，不是豆瓣小站，也不是贴吧。它更像是属于自己的一块小小的领地，因而我满足于这种归属感。我愿在上面安静劳作。一个农民，通过自身努力终于分到了一块地，不再需要在地主的土地上创造流量价值时，于是翻身作主的">
+<meta name="description" content="###数据库字段问题总结
+ 
+#####问题汇总：
+
+
+
+
+库名
+字段
+表名
+存在问题
+
+
+
+
+db4g
+recruitment_date（入职时间）
+借款人表 (TC_MORTGAGOR)
+2016年一月部分数据存在格式问题并且部分没有数据，eg0015-08-31，无法参与字段计算
+
+
+db4g
+month_income（月认定收入）
+收入流水表(TC_MORTGAGOR_SALARY)
+数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/06/11/hello-world/index.html">
+<meta property="og:title" content="字段总结">
+<meta property="og:url" content="http://yoursite.com/2016/08/22/字段总结/index.html">
 <meta property="og:site_name" content="Live's blog">
-<meta property="og:description" content="Welcome to my space!
-第一篇博客随便说两句
-   就像litten所说，当在github page上自己的博客加载下来时，突然有种错综复杂的恍惚感。是的，它不是qq空间，不是新浪博客，不是豆瓣小站，也不是贴吧。它更像是属于自己的一块小小的领地，因而我满足于这种归属感。我愿在上面安静劳作。一个农民，通过自身努力终于分到了一块地，不再需要在地主的土地上创造流量价值时，于是翻身作主的">
-<meta property="og:updated_time" content="2016-07-27T23:32:41.000Z">
+<meta property="og:description" content="###数据库字段问题总结
+ 
+#####问题汇总：
+
+
+
+
+库名
+字段
+表名
+存在问题
+
+
+
+
+db4g
+recruitment_date（入职时间）
+借款人表 (TC_MORTGAGOR)
+2016年一月部分数据存在格式问题并且部分没有数据，eg0015-08-31，无法参与字段计算
+
+
+db4g
+month_income（月认定收入）
+收入流水表(TC_MORTGAGOR_SALARY)
+数据">
+<meta property="og:image" content="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1464330278&di=9bbde7338f71ce42831178f71f2d37e0&src=http://www.36dsj.com/wp-content/uploads/2015/02/1222.jpg">
+<meta property="og:updated_time" content="2016-08-21T21:07:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to my space!
-第一篇博客随便说两句
-   就像litten所说，当在github page上自己的博客加载下来时，突然有种错综复杂的恍惚感。是的，它不是qq空间，不是新浪博客，不是豆瓣小站，也不是贴吧。它更像是属于自己的一块小小的领地，因而我满足于这种归属感。我愿在上面安静劳作。一个农民，通过自身努力终于分到了一块地，不再需要在地主的土地上创造流量价值时，于是翻身作主的">
+<meta name="twitter:title" content="字段总结">
+<meta name="twitter:description" content="###数据库字段问题总结
+ 
+#####问题汇总：
+
+
+
+
+库名
+字段
+表名
+存在问题
+
+
+
+
+db4g
+recruitment_date（入职时间）
+借款人表 (TC_MORTGAGOR)
+2016年一月部分数据存在格式问题并且部分没有数据，eg0015-08-31，无法参与字段计算
+
+
+db4g
+month_income（月认定收入）
+收入流水表(TC_MORTGAGOR_SALARY)
+数据">
+<meta name="twitter:image" content="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1464330278&di=9bbde7338f71ce42831178f71f2d37e0&src=http://www.36dsj.com/wp-content/uploads/2015/02/1222.jpg">
 
 
 
@@ -120,9 +188,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/06/11/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/22/字段总结/"/>
 
-  <title> Hello World | Live's blog </title>
+  <title> 字段总结 | Live's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -242,7 +310,7 @@
             
             
               
-                Hello World
+                字段总结
               
             
           </h1>
@@ -254,8 +322,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-06-11T13:22:05+08:00" content="2016-06-11">
-              2016-06-11
+            <time itemprop="dateCreated" datetime="2016-08-22T05:05:14+08:00" content="2016-08-22">
+              2016-08-22
             </time>
           </span>
 
@@ -282,9 +350,64 @@
       
 
       
-        <p>Welcome to my space!</p>
-<h2 id="第一篇博客随便说两句"><a href="#第一篇博客随便说两句" class="headerlink" title="第一篇博客随便说两句"></a>第一篇博客随便说两句</h2><hr>
-<p>   就像litten所说，当在github page上自己的博客加载下来时，突然有种错综复杂的恍惚感。是的，它不是qq空间，不是新浪博客，不是豆瓣小站，也不是贴吧。它更像是属于自己的一块小小的领地，因而我满足于这种归属感。我愿在上面安静劳作。<br>一个农民，通过自身努力终于分到了一块地，不再需要在地主的土地上创造流量价值时，于是翻身作主的他可以宣告说：Hello World。当然这个农民确切来说是个码农。``</p>
+        <p>###数据库字段问题总结</p>
+<p><img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&amp;quality=100&amp;size=b4000_4000&amp;sec=1464330278&amp;di=9bbde7338f71ce42831178f71f2d37e0&amp;src=http://www.36dsj.com/wp-content/uploads/2015/02/1222.jpg" alt="angry birds"> </p>
+<p>#####问题汇总：</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>库名</th>
+<th>字段</th>
+<th>表名</th>
+<th>存在问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>db4g</td>
+<td>recruitment_date（入职时间）</td>
+<td>借款人表 (TC_MORTGAGOR)</td>
+<td>2016年一月部分数据存在格式问题并且部分没有数据，eg0015-08-31，无法参与字段计算</td>
+</tr>
+<tr>
+<td>db4g</td>
+<td>month_income（月认定收入）</td>
+<td>收入流水表(TC_MORTGAGOR_SALARY)</td>
+<td>数据存在部分缺失，大部分属于宜人贷拒贷产品，但是拒贷产品因为流水问题会录入流水</td>
+</tr>
+<tr>
+<td>db4g</td>
+<td>content_type(社保公积金类型) ;   month_payment_base(缴纳基数）</td>
+<td>社保费用缴纳证件表(TC_IDENTIFI_WELFARE)</td>
+<td>缴纳基数部分缺失，大部分属于宜人贷拒贷产品未录入</td>
+</tr>
+<tr>
+<td>db4g</td>
+<td>charge_against_liabilities（信用负债）</td>
+<td>信贷汇总表(TC_PBOC_LOAN_SUMMARY)</td>
+<td>数据存在部分缺失，大部分属于宜人贷拒贷产品，存在客户没有信用负债情况</td>
+</tr>
+<tr>
+<td>db4g</td>
+<td></td>
+<td>信贷汇总表(TC_PBOC_LOAN_SUMMARY)</td>
+<td>数据库显示表名为TC_PBOC_C_LOAN_SUMMARY,实际使用时要去掉表名中的C</td>
+</tr>
+<tr>
+<td>bi</td>
+<td>apply_id(varchar2)</td>
+<td>bi_ods.v_CE_borrow</td>
+<td>字段格式不同，需要用cast()转换,union的时候要统一字段格式</td>
+</tr>
+<tr>
+<td>bi</td>
+<td>clic_apply_id(number);apply_id(num)</td>
+<td>bi_ods.yrd_audit_application</td>
+<td>字段格式不同，需要用cast()转换,union的时候要统一字段格式</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -307,7 +430,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hello-World/" rel="tag">#Hello World</a>
+            <a href="/tags/SQL/" rel="tag">#SQL</a>
           
         </div>
       
@@ -316,13 +439,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/08/07/Faded/" rel="next" title="Faded">
+                <i class="fa fa-chevron-left"></i> Faded
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/23/小思绪/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -429,7 +552,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一篇博客随便说两句"><span class="nav-number">1.</span> <span class="nav-text">第一篇博客随便说两句</span></a></li></ol></div>
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
             
           </div>
         </section>

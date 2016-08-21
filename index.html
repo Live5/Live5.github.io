@@ -238,6 +238,157 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/22/字段总结/" itemprop="url">
+                  字段总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-08-22T05:05:14+08:00" content="2016-08-22">
+              2016-08-22
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>###数据库字段问题总结</p>
+<p><img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&amp;quality=100&amp;size=b4000_4000&amp;sec=1464330278&amp;di=9bbde7338f71ce42831178f71f2d37e0&amp;src=http://www.36dsj.com/wp-content/uploads/2015/02/1222.jpg" alt="angry birds"> </p>
+<p>#####问题汇总：</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>库名</th>
+<th>字段</th>
+<th>表名</th>
+<th>存在问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>db4g</td>
+<td>recruitment_date（入职时间）</td>
+<td>借款人表 (TC_MORTGAGOR)</td>
+<td>2016年一月部分数据存在格式问题并且部分没有数据，eg0015-08-31，无法参与字段计算</td>
+</tr>
+<tr>
+<td>db4g</td>
+<td>month_income（月认定收入）</td>
+<td>收入流水表(TC_MORTGAGOR_SALARY)</td>
+<td>数据存在部分缺失，大部分属于宜人贷拒贷产品，但是拒贷产品因为流水问题会录入流水</td>
+</tr>
+<tr>
+<td>db4g</td>
+<td>content_type(社保公积金类型) ;   month_payment_base(缴纳基数）</td>
+<td>社保费用缴纳证件表(TC_IDENTIFI_WELFARE)</td>
+<td>缴纳基数部分缺失，大部分属于宜人贷拒贷产品未录入</td>
+</tr>
+<tr>
+<td>db4g</td>
+<td>charge_against_liabilities（信用负债）</td>
+<td>信贷汇总表(TC_PBOC_LOAN_SUMMARY)</td>
+<td>数据存在部分缺失，大部分属于宜人贷拒贷产品，存在客户没有信用负债情况</td>
+</tr>
+<tr>
+<td>db4g</td>
+<td></td>
+<td>信贷汇总表(TC_PBOC_LOAN_SUMMARY)</td>
+<td>数据库显示表名为TC_PBOC_C_LOAN_SUMMARY,实际使用时要去掉表名中的C</td>
+</tr>
+<tr>
+<td>bi</td>
+<td>apply_id(varchar2)</td>
+<td>bi_ods.v_CE_borrow</td>
+<td>字段格式不同，需要用cast()转换,union的时候要统一字段格式</td>
+</tr>
+<tr>
+<td>bi</td>
+<td>clic_apply_id(number);apply_id(num)</td>
+<td>bi_ods.yrd_audit_application</td>
+<td>字段格式不同，需要用cast()转换,union的时候要统一字段格式</td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/07/Faded/" itemprop="url">
                   Faded
                 </a>
@@ -960,8 +1111,7 @@
         
           
             <hr>
-<p>title: 小思绪</p>
-<h2 id="tags-O’Brien-Cup"><a href="#tags-O’Brien-Cup" class="headerlink" title="tags: O’Brien Cup"></a>tags: O’Brien Cup</h2><h2 id="说几句"><a href="#说几句" class="headerlink" title="说几句"></a>说几句</h2><p>最近在忙着弄前端，很长时间都没写文章了，也只是为了部署而攒几个字而已</p>
+<h2 id="title-小思绪"><a href="#title-小思绪" class="headerlink" title="title: 小思绪"></a>title: 小思绪</h2><h2 id="tags-O’Brien-Cup"><a href="#tags-O’Brien-Cup" class="headerlink" title="tags: O’Brien Cup"></a>tags: O’Brien Cup</h2><h2 id="说几句"><a href="#说几句" class="headerlink" title="说几句"></a>说几句</h2><p>最近在忙着弄前端，很长时间都没写文章了，也只是为了部署而攒几个字而已</p>
 <p>这几天都在想自己未来的小计划，虽然有太多要学习的有太多深挖的方向，不过欣喜的是终于有了大体的框架，有种欣喜要去准备造轮子的心动</p>
 <p>好吧，正好配上乐邦的冠军，看他赛后长跪不起的哭泣，也许这个男人身上背负了太多的责任和使命，勇士的浪让他们付出了代价，的确乐邦也</p>
 <p>实至名归，虽然我是勇士的密但不能阻止我对乐邦的敬佩，这种意味深长的感叹和期许是所有人都不能敌的，看他捧起了期许已久的奥布莱恩杯</p>
@@ -1133,7 +1283,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1143,7 +1293,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
