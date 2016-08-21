@@ -103,8 +103,8 @@ recruitment_date（入职时间）
 
 db4g
 month_income（月认定收入）
-收入流水表(TC_MORTGAGOR_SALARY)
-数据存在部分缺失，大部分属于">
+收入流水表(TC_SALARY)
+数据存在部分缺失，大部分属于宜人贷拒贷产品，但是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字段总结">
 <meta property="og:url" content="http://yoursite.com/2016/08/22/字段总结/index.html">
@@ -128,10 +128,10 @@ recruitment_date（入职时间）
 
 db4g
 month_income（月认定收入）
-收入流水表(TC_MORTGAGOR_SALARY)
-数据存在部分缺失，大部分属于">
+收入流水表(TC_SALARY)
+数据存在部分缺失，大部分属于宜人贷拒贷产品，但是">
 <meta property="og:image" content="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1464330278&di=9bbde7338f71ce42831178f71f2d37e0&src=http://www.36dsj.com/wp-content/uploads/2015/02/1222.jpg">
-<meta property="og:updated_time" content="2016-08-21T21:18:29.000Z">
+<meta property="og:updated_time" content="2016-08-21T21:24:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字段总结">
 <meta name="twitter:description" content="数据库字段问题总结 问题汇总：
@@ -153,8 +153,8 @@ recruitment_date（入职时间）
 
 db4g
 month_income（月认定收入）
-收入流水表(TC_MORTGAGOR_SALARY)
-数据存在部分缺失，大部分属于">
+收入流水表(TC_SALARY)
+数据存在部分缺失，大部分属于宜人贷拒贷产品，但是">
 <meta name="twitter:image" content="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1464330278&di=9bbde7338f71ce42831178f71f2d37e0&src=http://www.36dsj.com/wp-content/uploads/2015/02/1222.jpg">
 
 
@@ -357,7 +357,7 @@ month_income（月认定收入）
 <tr>
 <td>db4g</td>
 <td>month_income（月认定收入）</td>
-<td>收入流水表(TC_MORTGAGOR_SALARY)</td>
+<td>收入流水表(TC_SALARY)</td>
 <td>数据存在部分缺失，大部分属于宜人贷拒贷产品，但是拒贷产品因为流水问题会录入流水</td>
 </tr>
 <tr>
@@ -374,9 +374,9 @@ month_income（月认定收入）
 </tr>
 <tr>
 <td>db4g</td>
-<td>TC_PBOC_LOAN_SUMMARY</td>
+<td>tc_loan_summary</td>
 <td>信贷汇总表</td>
-<td>数据库显示表名为TC_PBOC_C_LOAN_SUMMARY,实际使用时要去掉表名中的C</td>
+<td>数据库显示表名为loan_summary,实际使用时要去掉表名中的C</td>
 </tr>
 <tr>
 <td>bi</td>
@@ -387,7 +387,8 @@ month_income（月认定收入）
 <tr>
 <td>bi</td>
 <td>clic_apply_id(number)</td>
-<td>bi_ods.yrd_audit字段格式不同，需要用cast()转换,union的时候要统一字段格式</td>
+<td>bi_ods.yrd_audit</td>
+<td>字段格式不同，需要用cast()转换,union的时候要统一字段格式</td>
 </tr>
 </tbody>
 </table>
