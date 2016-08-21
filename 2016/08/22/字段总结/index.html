@@ -84,9 +84,7 @@
 
 
 
-<meta name="description" content="###数据库字段问题总结
- 
-#####问题汇总：
+<meta name="description" content="###数据库字段问题总结 #####问题汇总：
 
 
 
@@ -107,15 +105,16 @@ recruitment_date（入职时间）
 
 db4g
 month_income（月认定收入）
-收入流水表(TC_MORTGAGOR_SALARY)
-数据">
+收入流水表
+
+
+
+(TC_MORTGAGOR_SALARY)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字段总结">
 <meta property="og:url" content="http://yoursite.com/2016/08/22/字段总结/index.html">
 <meta property="og:site_name" content="Live's blog">
-<meta property="og:description" content="###数据库字段问题总结
- 
-#####问题汇总：
+<meta property="og:description" content="###数据库字段问题总结 #####问题汇总：
 
 
 
@@ -136,15 +135,16 @@ recruitment_date（入职时间）
 
 db4g
 month_income（月认定收入）
-收入流水表(TC_MORTGAGOR_SALARY)
-数据">
+收入流水表
+
+
+
+(TC_MORTGAGOR_SALARY)">
 <meta property="og:image" content="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1464330278&di=9bbde7338f71ce42831178f71f2d37e0&src=http://www.36dsj.com/wp-content/uploads/2015/02/1222.jpg">
-<meta property="og:updated_time" content="2016-08-21T21:07:49.000Z">
+<meta property="og:updated_time" content="2016-08-21T21:11:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字段总结">
-<meta name="twitter:description" content="###数据库字段问题总结
- 
-#####问题汇总：
+<meta name="twitter:description" content="###数据库字段问题总结 #####问题汇总：
 
 
 
@@ -165,8 +165,11 @@ recruitment_date（入职时间）
 
 db4g
 month_income（月认定收入）
-收入流水表(TC_MORTGAGOR_SALARY)
-数据">
+收入流水表
+
+
+
+(TC_MORTGAGOR_SALARY)">
 <meta name="twitter:image" content="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1464330278&di=9bbde7338f71ce42831178f71f2d37e0&src=http://www.36dsj.com/wp-content/uploads/2015/02/1222.jpg">
 
 
@@ -350,9 +353,7 @@ month_income（月认定收入）
       
 
       
-        <p>###数据库字段问题总结</p>
-<p><img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&amp;quality=100&amp;size=b4000_4000&amp;sec=1464330278&amp;di=9bbde7338f71ce42831178f71f2d37e0&amp;src=http://www.36dsj.com/wp-content/uploads/2015/02/1222.jpg" alt="angry birds"> </p>
-<p>#####问题汇总：</p>
+        <h2 id="数据库字段问题总结"><a href="#数据库字段问题总结" class="headerlink" title="###数据库字段问题总结"></a>###数据库字段问题总结</h2><h2 id=""><a href="#" class="headerlink" title=" "></a><img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&amp;quality=100&amp;size=b4000_4000&amp;sec=1464330278&amp;di=9bbde7338f71ce42831178f71f2d37e0&amp;src=http://www.36dsj.com/wp-content/uploads/2015/02/1222.jpg" alt="angry birds"> </h2><p>#####问题汇总：</p>
 <hr>
 <table>
 <thead>
@@ -373,41 +374,11 @@ month_income（月认定收入）
 <tr>
 <td>db4g</td>
 <td>month_income（月认定收入）</td>
-<td>收入流水表(TC_MORTGAGOR_SALARY)</td>
-<td>数据存在部分缺失，大部分属于宜人贷拒贷产品，但是拒贷产品因为流水问题会录入流水</td>
-</tr>
-<tr>
-<td>db4g</td>
-<td>content_type(社保公积金类型) ;   month_payment_base(缴纳基数）</td>
-<td>社保费用缴纳证件表(TC_IDENTIFI_WELFARE)</td>
-<td>缴纳基数部分缺失，大部分属于宜人贷拒贷产品未录入</td>
-</tr>
-<tr>
-<td>db4g</td>
-<td>charge_against_liabilities（信用负债）</td>
-<td>信贷汇总表(TC_PBOC_LOAN_SUMMARY)</td>
-<td>数据存在部分缺失，大部分属于宜人贷拒贷产品，存在客户没有信用负债情况</td>
-</tr>
-<tr>
-<td>db4g</td>
-<td></td>
-<td>信贷汇总表(TC_PBOC_LOAN_SUMMARY)</td>
-<td>数据库显示表名为TC_PBOC_C_LOAN_SUMMARY,实际使用时要去掉表名中的C</td>
-</tr>
-<tr>
-<td>bi</td>
-<td>apply_id(varchar2)</td>
-<td>bi_ods.v_CE_borrow</td>
-<td>字段格式不同，需要用cast()转换,union的时候要统一字段格式</td>
-</tr>
-<tr>
-<td>bi</td>
-<td>clic_apply_id(number);apply_id(num)</td>
-<td>bi_ods.yrd_audit_application</td>
-<td>字段格式不同，需要用cast()转换,union的时候要统一字段格式</td>
+<td>收入流水表</td>
 </tr>
 </tbody>
 </table>
+<p>(TC_MORTGAGOR_SALARY)    | 数据存在部分缺失，大部分属于宜人贷拒贷产品，但是拒贷产品因为流水问题会录入流水    |<br>|    db4g    |        content_type(社保公积金类型) ;   month_payment_base(缴纳基数）|        社保费用缴纳证件表(TC_IDENTIFI_WELFARE)    |    缴纳基数部分缺失，大部分属于宜人贷拒贷产品未录入    |<br>|    db4g    |charge_against_liabilities（信用负债）            |信贷汇总表(TC_PBOC_LOAN_SUMMARY)|数据存在部分缺失，大部分属于宜人贷拒贷产品，存在客户没有信用负债情况    |<br>|    db4g    |        |信贷汇总表(TC_PBOC_LOAN_SUMMARY)|数据库显示表名为TC_PBOC_C_LOAN_SUMMARY,实际使用时要去掉表名中的C    |<br>|    bi    |apply_id(varchar2)|    bi_ods.v_CE_borrow    |字段格式不同，需要用cast()转换,union的时候要统一字段格式    |<br>|    bi    |clic_apply_id(number);apply_id(num)|    bi_ods.yrd_audit_application|字段格式不同，需要用cast()转换,union的时候要统一字段格式    |</p>
 
       
     </div>
@@ -552,7 +523,7 @@ month_income（月认定收入）
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库字段问题总结"><span class="nav-number">1.</span> <span class="nav-text">###数据库字段问题总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text"> </span></a></li></ol></div>
             
           </div>
         </section>
