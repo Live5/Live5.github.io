@@ -238,6 +238,101 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/28/wordcloud2/" itemprop="url">
+                  词云---有意思的呈现
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-08-28T17:03:16+08:00" content="2016-08-28">
+              2016-08-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>关于R的词云<br>看到最近郎大为的最近的R包出产了，作为一个新的R包特别是在词语解决方案上，已经足够让广大R迷或者说词云粉丝，也或许是段子手们为之兴奋了。<br>对于这次的wordcloud2的出现，外界的评价都特别高，被称为目前最好的词云解决方案。<br>那么先来开膛破肚的介绍下这个包的原理，其实这个新的词云包用的是wordcloud2.js的库，在调用这个库的同时，利用词与词之间的间隔来插入数据，其中一个新的feature是可以根据图片或者文字来绘制定制化词云，其实也就是说可以做到词云的多样化。</p>
+<h2 id="先来张拿到这个包的上手词云图"><a href="#先来张拿到这个包的上手词云图" class="headerlink" title="先来张拿到这个包的上手词云图"></a>先来张拿到这个包的上手词云图</h2><h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://ocf3bi6ej.bkt.clouddn.com/Rplot.png" alt="login"></h2><h2 id="这个是用到了其中的核心函数wordcloud2-在调整了下背景后生成的"><a href="#这个是用到了其中的核心函数wordcloud2-在调整了下背景后生成的" class="headerlink" title="这个是用到了其中的核心函数wordcloud2(),在调整了下背景后生成的"></a>这个是用到了其中的核心函数wordcloud2(),在调整了下背景后生成的</h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="http://ocf3bi6ej.bkt.clouddn.com/Rplot01.png" alt="login"></h2><p>这个是用到了词云包里的新特性，就是根据自己的喜好生成了一幅自己定制词云，这个反战符号是用Sketch手动绘制的，因为比较心焦的想试下新特性，最先想到的就是这个比较简单，并且结构比较鲜明的符号。<br>此次词云包的新特性还有很多情景派的上用场，这让我想到了用户画像的词云定制，特别是在P2P金融的反欺诈用户的画像中，也可以用这种新特性完成，简直是个好东西！</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/27/关于时效的SQL代码/" itemprop="url">
                   关于时效的SQL代码
                 </a>
@@ -285,8 +380,8 @@
             <h2 id="产品线的时效问题"><a href="#产品线的时效问题" class="headerlink" title="产品线的时效问题"></a>产品线的时效问题</h2><p>这两天一直受制于各产品的时效问题没有好的方案，起因是需求啊！！还是需求！！老大对于整个产品线的优化问题到了一个新的高度，同行业的审批流程一直在下降，但是对于风控的要求还是不能有过多的取舍，谁让鱼和熊掌不能够兼得，即想有好的MOB数据，又要减少审批时间，那么需求来了，到底应该优化哪个阶段的时效呢？</p>
 <p> 于是有了以下的代码</p>
 <hr>
-<p>‘’ select  ‘<br>‘’ 2016-06-12    ‘ as 周期, kx.产品线, kx.初审, sum(kx.初审等待) 初审等待, sum（kx.初审处理）初审处理, sum(时效3) 时效3, count(transport_id) 初审时效处理量<br>‘’ from (<br>‘’ select<br>‘’      transport_id, cs 初审, product as 产品,  round(cs_dd,2) as 初审等待 ,  round(cs_cl,2) as 初审处理,   round(cs_dd + cs_cl ,2) as 时效3 ,<br>‘’     (case<br>‘’     when substr(product,0,3) in （’新薪贷’,’精英贷’,’新薪宜’,’助业贷’,’线下金’,’线下信’,’新薪（’,’助业宜’,’MSE’） then ‘城市信贷’<br>‘’     when substr(product,0,3) in （’网商贷’,’乐购分’,’宜学贷’,’pos贷’,’供应链’,’汽车金’,’宜车购’,’企合消费金融’）   then ‘渠道’<br>‘’     when substr(product,0,3) in （’线上精’,’线上码’,’新线上’）   then ‘宜人线上’<br>‘’     when substr(product,0,3) in （’线上瞬’,’瞬时贷’,’公积金’）   then ‘k计划’<br>‘’     else product  end) 产品线<br>‘’ from (select  transport_id, sum(csdd) as cs_dd , sum(cscl) as cs_cl<br>‘’ from (select  transport_id, process_node,<br>‘’     (case when process_node in (‘2-1’,’2-2’,’2-3’,’2-4’) then all_time else 0 end ) as csdd,(case when process_node in (‘2-0’) then all_time else 0 end ) as cscl<br>‘’<br>‘’ from (select  transport_id, process_node, s_time, e_time, 24<em>(time1+time2+time3 ) as all_time<br>‘’ from (select  transport_id, process_node, s_time, e_time,<br>‘’     (case when to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-03-30    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-30    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-03-30    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-30    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0.375<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-30    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;=  to_date(‘     2016-03-30    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) - to_date(s_time, ‘yyyy-mm-dd hh24:mi:ss’)<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-03-30    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;=  to_date(‘     2016-03-30    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) - to_date(‘                    2016-03-30    09:30:00’,’yyyy-mm-dd hh24:mi:ss’）<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-30    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &gt;=  to_date(‘     2016-03-30    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(‘        2016-03-30    18:30:00’,’yyyy-mm-dd hh24:mi:ss’) - to_date(s_time,’yyyy-mm-dd hh24:mi:ss’)   else  0  end )                         time1    ,<br>‘’<br>‘’     (case when to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-03-31    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-31    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-03-31    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-31    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0.375<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-31    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;=  to_date(‘     2016-03-31    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) - to_date(s_time, ‘yyyy-mm-dd hh24:mi:ss’)<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-03-31    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;=  to_date(‘     2016-03-31    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) - to_date(‘                    2016-03-31    09:30:00’,’yyyy-mm-dd hh24:mi:ss’）<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-31    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &gt;=  to_date(‘     2016-03-31    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(‘        2016-03-31    18:30:00’,’yyyy-mm-dd hh24:mi:ss’) - to_date(s_time,’yyyy-mm-dd hh24:mi:ss’)   else  0  end )                         time2    ,<br>‘’<br>‘’     (case when to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-04-01    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-04-01    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-04-01    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-04-01    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0.375<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-04-01    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;=  to_date(‘     2016-04-01    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) - to_date(s_time, ‘yyyy-mm-dd hh24:mi:ss’)<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-04-01    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;=  to_date(‘     2016-04-01    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) - to_date(‘                    2016-04-01    09:30:00’,’yyyy-mm-dd hh24:mi:ss’）<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-04-01    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &gt;=  to_date(‘     2016-04-01    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(‘        2016-04-01    18:30:00’,’yyyy-mm-dd hh24:mi:ss’) - to_date(s_time,’yyyy-mm-dd hh24:mi:ss’)   else  0  end )                         time3<br>‘’<br>‘’ from    (select transport_id from<br>‘’     ( select  transport_id,max(decesion_id) as decision_id  from  clic_sele_v.v_xg_tc_busi_decision<br>‘’     where  to_date(inspection_time,’yyyy-mm-dd hh24:mi:ss’)&gt;to_date(‘    2016-06-08    17:30:01’,’yyyy-mm-dd hh24:mi:ss’)  and  to_date(inspection_time,’yyyy-mm-dd hh24:mi:ss’)<to_date(' 2016-06-12="" 17:30:00','yyyy-mm-dd="" hh24:mi:ss')="" and="" data_source="2" is_decision="1" group="" by="" transport_id="" )="" ''="" natural="" left="" join="" (select="" transport_id,="" process_node="" from="" min(n_log_id)="" as="" n_log_id="" decision_id,="" flow_log_id="" ,="" (="" select="" transport_id,max(decesion_id)="" decision_id="" clic_sele_v.v_xg_tc_busi_decision="" where="" to_date(inspection_time,'yyyy-mm-dd="">to_date(‘    2016-06-08    17:30:01’,’yyyy-mm-dd hh24:mi:ss’)  and  to_date(inspection_time,’yyyy-mm-dd hh24:mi:ss’)<to_date(' 2016-06-12="" 17:30:00','yyyy-mm-dd="" hh24:mi:ss')="" and="" data_source="" in（'2','3')="" is_decision="1" group="" by="" transport_id="" )="" ''="" natural="" left="" join="" (select="" decesion_id="" as="" decision_id,="" flow_log_id="" from="" clic_sele_v.v_xg_tc_flow_log)="" ,="" n_log_id="" where="">flow_log_id   group by transport_id  )<br>‘’     natural  left join (select flow_log_id as n_log_id, process_node from clic_sele_v.v_xg_tc_flow_log ) )<br>‘’     natural left join ( select transport_id, min(flow_log_id) as flow_2  from clic_sele_v.v_xg_tc_flow_log  where process_node in (‘5-1’,’6-1’,’1-2’,’15-3’) group by transport_id)<br>‘’     where process_node in (‘11-1’,’11-2’,’20-1’)  and flow_2 is  null )<br>‘’ natural left  join<br>‘’<br>‘’     (select     transport_id,  process_node,  s_time1 as s_time,<br>‘’           case when  s_time1&gt;=e_time1  and e_time1 is not null then  s_time2<br>‘’            else  e_time1 end e_time<br>‘’     from      ( select rownum+1 rn, transport_id, process_node, s_time1, e_time1<br>‘’             from        ( select<br>‘’                          transport_id,  process_node,<br>‘’                          nvl(start_time, create_date)  s_time1,<br>‘’                          nvl(end_time,assign_time) e_time1<br>‘’                     FROM clic_sele_v.v_xg_tc_flow_log<br>‘’             where to_date(create_date,’yyyy-mm-dd hh24:mi:ss’)&gt; to_date(‘2015-10-01 00:00:01’,’yyyy-mm-dd hh24:mi:ss’)<br>‘’                    order by transport_id , flow_log_id       )<br>‘’         )<br>‘’     natural left join      ( select  </to_date('></to_date('></em><br>‘’             from         (     select rownum rn, s_time2<br>‘’                       from<br>‘’                         (  select<br>‘’                             nvl(start_time, create_date)  s_time2<br>‘’                             from  clic_sele_v.v_xg_tc_flow_log<br>‘’             where to_date(create_date,’yyyy-mm-dd hh24:mi:ss’)&gt; to_date(‘2015-10-01 00:00:01’,’yyyy-mm-dd hh24:mi:ss’)<br>‘’                             order by transport_id , flow_log_id     )<br>‘’                       )<br>‘’             where rn!=1<br>‘’         )<br>‘’     )<br>‘’ ))) group by transport_id )<br>‘’ natural left  join ( select transport_id, product_type,submit_dept_no as dept_id from clic_sele_v.v_xg_tc_bs_transport )<br>‘’ natural left  join ( select dept_id ,dept_name from clic_sele_v.v_xg_TC_BS_DEPARTMENT )<br>‘’ natural left  join ( select system_id as product_type , remark as product from clic_sele_v.v_xg_s_data_dic where  system_type=’COMMON_PRODUCT_TYPE’)<br>‘’<br>‘’ natural left join<br>‘’ (select transport_id,beg_jude_name as cs<br>‘’ from<br>‘’  (SELECT transport_id, inspection_man from clic_sele_v.v_xg_tc_busi_decision<br>‘’     where  decesion_id  in<br>‘’     ( select max(decesion_id) as decision_id from clic_sele_v.v_xg_tc_busi_decision<br>‘’     where  data_source=’2’ and  is_decision=’1’<br>‘’     group by  transport_id ))<br>‘’ natural left join<br>‘’ (select distinct user_code as inspection_man,user_name as beg_jude_name<br>‘’ from clic_sele_v.v_xg_tc_user))<br>‘’ ) kx<br>‘’ group by kx.产品线, kx.初审<br>‘’ order by kx.产品线                                                                             </p>
-<p>不得不说虽然很丑很长，但是，我是说但是，考虑了所有的流程的情况，神马提交的反欺诈、二次协商问题、回退问题等等….统统考虑进去，效率在三分钟以内，对于全线产品来说是通用的！感觉自己的逻辑又有了新的境界！毕竟真的是和一线的审核和系统的技术人员擦出了绳命的火花！</p>
+<p>‘’ select  ‘<br>‘’ 2016-06-12    ‘ as 周期, kx.产品线, kx.初审, sum(kx.初审等待) 初审等待, sum（kx.初审处理）初审处理, sum(时效3) 时效3, count(transport_id) 初审时效处理量<br>‘’ from (<br>‘’ select<br>‘’      transport_id, cs 初审, product as 产品,  round(cs_dd,2) as 初审等待 ,  round(cs_cl,2) as 初审处理,   round(cs_dd + cs_cl ,2) as 时效3 ,<br>‘’     (case<br>‘’     when substr(product,0,3) in （’新薪贷’,’精英贷’,’新薪宜’,’助业贷’,’线下金’,’线下信’,’新薪（’,’助业宜’,’MSE’） then ‘城市信贷’<br>‘’     when substr(product,0,3) in （’网商贷’,’乐购分’,’宜学贷’,’pos贷’,’供应链’,’汽车金’,’宜车购’,’企合消费金融’）   then ‘渠道’<br>‘’     when substr(product,0,3) in （’线上精’,’线上码’,’新线上’）   then ‘宜人线上’<br>‘’     when substr(product,0,3) in （’线上瞬’,’瞬时贷’,’公积金’）   then ‘k计划’<br>‘’     else product  end) 产品线<br>‘’ from (select  transport_id, sum(csdd) as cs_dd , sum(cscl) as cs_cl<br>‘’ from (select  transport_id, process_node,<br>‘’     (case when process_node in (‘2-1’,’2-2’,’2-3’,’2-4’) then all_time else 0 end ) as csdd,(case when process_node in (‘2-0’) then all_time else 0 end ) as cscl<br>‘’<br>‘’ from (select  transport_id, process_node, s_time, e_time, 24<em>(time1+time2+time3 ) as all_time<br>‘’ from (select  transport_id, process_node, s_time, e_time,<br>‘’     (case when to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-03-30    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-30    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-03-30    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-30    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0.375<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-30    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;=  to_date(‘     2016-03-30    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) - to_date(s_time, ‘yyyy-mm-dd hh24:mi:ss’)<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-03-30    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;=  to_date(‘     2016-03-30    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) - to_date(‘                    2016-03-30    09:30:00’,’yyyy-mm-dd hh24:mi:ss’）<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-30    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &gt;=  to_date(‘     2016-03-30    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(‘        2016-03-30    18:30:00’,’yyyy-mm-dd hh24:mi:ss’) - to_date(s_time,’yyyy-mm-dd hh24:mi:ss’)   else  0  end )                         time1    ,<br>‘’<br>‘’     (case when to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-03-31    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-31    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-03-31    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-31    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0.375<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-31    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;=  to_date(‘     2016-03-31    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) - to_date(s_time, ‘yyyy-mm-dd hh24:mi:ss’)<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-03-31    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;=  to_date(‘     2016-03-31    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) - to_date(‘                    2016-03-31    09:30:00’,’yyyy-mm-dd hh24:mi:ss’）<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-03-31    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &gt;=  to_date(‘     2016-03-31    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(‘        2016-03-31    18:30:00’,’yyyy-mm-dd hh24:mi:ss’) - to_date(s_time,’yyyy-mm-dd hh24:mi:ss’)   else  0  end )                         time2    ,<br>‘’<br>‘’     (case when to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-04-01    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-04-01    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-04-01    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-04-01    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)  then 0.375<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-04-01    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;=  to_date(‘     2016-04-01    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) - to_date(s_time, ‘yyyy-mm-dd hh24:mi:ss’)<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &lt;= to_date(‘     2016-04-01    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &lt;=  to_date(‘     2016-04-01    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) - to_date(‘                    2016-04-01    09:30:00’,’yyyy-mm-dd hh24:mi:ss’）<br>‘’     when to_date(s_time,’yyyy-mm-dd hh24:mi:ss’) &gt;= to_date(‘     2016-04-01    09:30:00’,’yyyy-mm-dd hh24:mi:ss’)  and to_date(e_time,’yyyy-mm-dd hh24:mi:ss’) &gt;=  to_date(‘     2016-04-01    18:30:00’,’yyyy-mm-dd hh24:mi:ss’)   then to_date(‘        2016-04-01    18:30:00’,’yyyy-mm-dd hh24:mi:ss’) - to_date(s_time,’yyyy-mm-dd hh24:mi:ss’)   else  0  end )                         time3<br>‘’<br>‘’ from    (select transport_id from<br>‘’     ( select  transport_id,max(decesion_id) as decision_id  from  clic_sele_v.v_xg_tc_busi_decision<br>‘’     where  to_date(inspection_time,’yyyy-mm-dd hh24:mi:ss’)&gt;to_date(‘    2016-06-08    17:30:01’,’yyyy-mm-dd hh24:mi:ss’)  and  to_date(inspection_time,’yyyy-mm-dd hh24:mi:ss’)<to_date(' 2016-06-12="" 17:30:00','yyyy-mm-dd="" hh24:mi:ss')="" and="" data_source="2" is_decision="1" group="" by="" transport_id="" )="" ''="" natural="" left="" join="" (select="" transport_id,="" process_node="" from="" min(n_log_id)="" as="" n_log_id="" decision_id,="" flow_log_id="" ,="" (="" select="" transport_id,max(decesion_id)="" decision_id="" clic_sele_v.v_xg_tc_busi_decision="" where="" to_date(inspection_time,'yyyy-mm-dd="">to_date(‘    2016-06-08    17:30:01’,’yyyy-mm-dd hh24:mi:ss’)  and  to_date(inspection_time,’yyyy-mm-dd hh24:mi:ss’)<to_date(' 2016-06-12="" 17:30:00','yyyy-mm-dd="" hh24:mi:ss')="" and="" data_source="" in（'2','3')="" is_decision="1" group="" by="" transport_id="" )="" ''="" natural="" left="" join="" (select="" decesion_id="" as="" decision_id,="" flow_log_id="" from="" clic_sele_v.v_xg_tc_flow_log)="" ,="" n_log_id="" where="">flow_log_id   group by transport_id  )<br>‘’     natural  left join (select flow_log_id as n_log_id, process_node from clic_sele_v.v_xg_tc_flow_log ) )<br>‘’     natural left join ( select transport_id, min(flow_log_id) as flow_2  from clic_sele_v.v_xg_tc_flow_log  where process_node in (‘5-1’,’6-1’,’1-2’,’15-3’) group by transport_id)<br>‘’     where process_node in (‘11-1’,’11-2’,’20-1’)  and flow_2 is  null )<br>‘’ natural left  join<br>‘’<br>‘’     (select     transport_id,  process_node,  s_time1 as s_time,<br>‘’           case when  s_time1&gt;=e_time1  and e_time1 is not null then  s_time2<br>‘’            else  e_time1 end e_time<br>‘’     from      ( select rownum+1 rn, transport_id, process_node, s_time1, e_time1<br>‘’             from        ( select<br>‘’                          transport_id,  process_node,<br>‘’                          nvl(start_time, create_date)  s_time1,<br>‘’                          nvl(end_time,assign_time) e_time1<br>‘’                     FROM clic_sele_v.v_xg_tc_flow_log<br>‘’             where to_date(create_date,’yyyy-mm-dd hh24:mi:ss’)&gt; to_date(‘2015-10-01 00:00:01’,’yyyy-mm-dd hh24:mi:ss’)<br>‘’                    order by transport_id , flow_log_id       )<br>‘’         )<br>‘’     natural left join      ( select  </to_date('></to_date('></em><br>‘’             from         (     select rownum rn, s_time2<br>‘’                       from<br>‘’                         (  select<br>‘’                             nvl(start_time, create_date)  s_time2<br>‘’                             from  clic_sele_v.v_xg_tc_flow_log<br>‘’             where to_date(create_date,’yyyy-mm-dd hh24:mi:ss’)&gt; to_date(‘2015-10-01 00:00:01’,’yyyy-mm-dd hh24:mi:ss’)<br>‘’                             order by transport_id , flow_log_id     )<br>‘’                       )<br>‘’             where rn!=1<br>‘’         )<br>‘’     )<br>‘’ ))) group by transport_id )<br>‘’ natural left  join ( select transport_id, product_type,submit_dept_no as dept_id from clic_sele_v.v_xg_tc_bs_transport )<br>‘’ natural left  join ( select dept_id ,dept_name from clic_sele_v.v_xg_TC_BS_DEPARTMENT )<br>‘’ natural left  join ( select system_id as product_type , remark as product from clic_sele_v.v_xg_s_data_dic where  system_type=’COMMON_PRODUCT_TYPE’)<br>‘’<br>‘’ natural left join<br>‘’ (select transport_id,beg_jude_name as cs<br>‘’ from<br>‘’  (SELECT transport_id, inspection_man from clic_sele_v.v_xg_tc_busi_decision<br>‘’     where  decesion_id  in<br>‘’     ( select max(decesion_id) as decision_id from clic_sele_v.v_xg_tc_busi_decision<br>‘’     where  data_source=’2’ and  is_decision=’1’<br>‘’     group by  transport_id ))<br>‘’ natural left join<br>‘’ (select distinct user_code as inspection_man,user_name as beg_jude_name<br>‘’ from clic_sele_v.v_xg_tc_user))<br>‘’ ) kx<br>‘’ group by kx.产品线, kx.初审                                                                            </p>
+<h2 id="‘’-order-by-kx-产品线"><a href="#‘’-order-by-kx-产品线" class="headerlink" title="‘’ order by kx.产品线                                                                             "></a>‘’ order by kx.产品线                                                                             </h2><p>不得不说虽然很丑很长，但是，我是说但是，考虑了所有的流程的情况，神马提交的反欺诈、二次协商问题、回退问题等等….统统考虑进去，效率在三分钟以内，对于全线产品来说是通用的！感觉自己的逻辑又有了新的境界！毕竟真的是和一线的审核和系统的技术人员擦出了绳命的火花！</p>
 
           
         
@@ -1014,7 +1109,7 @@
             <p>权利的游戏第六季完</p>
 <h2 id="权游第六集"><a href="#权游第六集" class="headerlink" title="权游第六集"></a>权游第六集</h2><hr>
 <p>不知不觉冰火已经追到第六季，之前的很多剧情都快忘记了<br>趁着还没忘光，忽然想要写写冰火里的女人们。<br>冰火里女性角色很多，瑟曦，龙妈，珊莎，梅姨…<br>她们都各有光华，或残酷冷艳，或勇敢奔放<br>其中最引人瞩目的莫过于龙妈丹妮莉丝<br>很多人将她视为是女性成长，女权意识的代表人物<br>但是在我看来，她虽然有曲折离奇的成长史，波澜壮阔的发迹史<br>却和我所理解的“女权意识”和“女性成长”仍然有差距。</p>
-<p>私心里认为，冰火里真正能够代表女性成长的角色<br>还是非狼家二小姐“二丫”莫属。</p>
+<p>私心里认为，冰火里真正能够代表女性成长的角色<br>还是非狼家二小姐“二丫”莫属。<br><img src="http://img3.douban.com/view/group_topic/large/public/p39049782.jpg" alt="Arya"></p>
 
           
         
@@ -1140,100 +1235,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/27/最好的解释/" itemprop="url">
-                  最好的解释
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-06-27T05:55:26+08:00" content="2016-06-27">
-              2016-06-27
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="第三篇：inspired-by-sth"><a href="#第三篇：inspired-by-sth" class="headerlink" title="第三篇：inspired by sth"></a>第三篇：inspired by sth</h2><pre><code>突然看到一句话：”何须浅碧深红色，自是花中第一流。”或许是我不想轻易狗带的最好解释了！
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1279,7 +1280,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1289,7 +1290,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
