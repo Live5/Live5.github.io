@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="R," />
 
 
 
@@ -84,15 +84,16 @@
 
 
 
-<meta name="description" content="The geek&apos;s spirit place">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Live's blog">
-<meta property="og:url" content="http://yoursite.com/tags/inspired-by-sth/index.html">
+<meta name="description" content="无意间看到data flow上的一个常用的数据集，于是就下了下来，这是一个关于银行客户违约的数据集，这正好让我有了对C5.0实践的一个想法。这个数据集中的字段：账户余额，工作年限，贷款/收入比，居住年限，年龄，其他信用记录，房产，现有贷款账户，工作类型，受抚养人，电话，违约情况下面说一下大体做法‘’ set.seed(1024)#建立种子点‘’ credit_sample &amp;lt;- credit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="决策树-C50">
+<meta property="og:url" content="http://yoursite.com/2016/08/29/决策树/index.html">
 <meta property="og:site_name" content="Live's blog">
-<meta property="og:description" content="The geek&apos;s spirit place">
+<meta property="og:description" content="无意间看到data flow上的一个常用的数据集，于是就下了下来，这是一个关于银行客户违约的数据集，这正好让我有了对C5.0实践的一个想法。这个数据集中的字段：账户余额，工作年限，贷款/收入比，居住年限，年龄，其他信用记录，房产，现有贷款账户，工作类型，受抚养人，电话，违约情况下面说一下大体做法‘’ set.seed(1024)#建立种子点‘’ credit_sample &amp;lt;- credit">
+<meta property="og:updated_time" content="2016-08-28T22:52:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Live's blog">
-<meta name="twitter:description" content="The geek&apos;s spirit place">
+<meta name="twitter:title" content="决策树-C50">
+<meta name="twitter:description" content="无意间看到data flow上的一个常用的数据集，于是就下了下来，这是一个关于银行客户违约的数据集，这正好让我有了对C5.0实践的一个想法。这个数据集中的字段：账户余额，工作年限，贷款/收入比，居住年限，年龄，其他信用记录，房产，现有贷款账户，工作类型，受抚养人，电话，违约情况下面说一下大体做法‘’ set.seed(1024)#建立种子点‘’ credit_sample &amp;lt;- credit">
 
 
 
@@ -113,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/inspired-by-sth/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/29/决策树/"/>
 
-  <title> Tag: inspired by sth | Live's blog </title>
+  <title> 决策树-C50 | Live's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -136,7 +137,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,74 +215,123 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        inspired by sth
-        <small>Tag</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/23/小感想/" itemprop="url">
-              
-                <span itemprop="name">对于前端的突发奇想</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-23T21:20:35+08:00"
-              content="2016-07-23" >
-          07-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/06/27/最好的解释/" itemprop="url">
-              
-                <span itemprop="name">最好的解释</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-27T05:55:26+08:00"
-              content="2016-06-27" >
-          06-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </div>
 
   
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                决策树-C50
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-08-29T06:07:55+08:00" content="2016-08-29">
+              2016-08-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>无意间看到data flow上的一个常用的数据集，于是就下了下来，这是一个关于银行客户违约的数据集，这正好让我有了对C5.0实践的一个想法。<br>这个数据集中的字段：账户余额，工作年限，贷款/收入比，居住年限，年龄，其他信用记录，房产，现有贷款账户，工作类型，受抚养人，电话，违约情况<br>下面说一下大体做法<br>‘’ set.seed(1024)#建立种子点<br>‘’ credit_sample &lt;- credit[order(runif(1000)), ]#抽取1000条作为样本<br>‘’ </p>
+<p>‘’ train &lt;- credit_sample[1:900, ]#按照1：9的比例设立训练集<br>‘’ test  &lt;- credit_sample[901:1000, ]#建立测试集<br>‘’<br>‘’ library(C50)<br>‘’ credit_model &lt;- C5.0(train[-17], train$default)#建立C50模型<br>‘’<br>‘’ credit_pred &lt;- predict(credit_model, test)#运用测试集来预测结果<br>‘’<br>具体结果是酱紫：<br>‘’ Total Observations in Table: 100<br>‘’<br>‘’<br>‘’                | predicted default<br>‘’ acutal default | no | yes | Row Total |<br>‘’ —————|———–|———–|———–|<br>‘’             no | 57 | 11 | 68 |<br>‘’                | 0.570 | 0.110 | |<br>‘’ —————|———–|———–|———–|<br>‘’            yes | 16 | 16 | 32 |<br>‘’                | 0.160 | 0.160 | |<br>‘’ —————|———–|———–|———–|<br>‘’   Column Total | 73 | 27 | 100 |<br>‘’ —————|———–|———–|———–|<br>可以看到应用到测试集，该模型正确率73%，只识别了实际违约贷款32人中的50%，显然不够理想。<br>在后期，对于决策树是可以用剪枝来进行修缮的，对于提高准确率，可以运用bagging、boosting和随机森林，特别的可以运用悲观剪枝法来提高模型的准确率，这是一种后剪枝的方法。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/R/" rel="tag">#R</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/28/R的骚图绘制/" rel="next" title="R的骚图绘制">
+                <i class="fa fa-chevron-left"></i> R的骚图绘制
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -289,6 +339,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -308,8 +362,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://ww4.sinaimg.cn/mw690/006jaHZbjw1f4s3hi2b9jj30hs0hst9s.jpg"
@@ -352,6 +415,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -455,6 +529,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

@@ -238,6 +238,101 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/29/决策树/" itemprop="url">
+                  决策树-C50
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-08-29T06:07:55+08:00" content="2016-08-29">
+              2016-08-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>无意间看到data flow上的一个常用的数据集，于是就下了下来，这是一个关于银行客户违约的数据集，这正好让我有了对C5.0实践的一个想法。<br>这个数据集中的字段：账户余额，工作年限，贷款/收入比，居住年限，年龄，其他信用记录，房产，现有贷款账户，工作类型，受抚养人，电话，违约情况<br>下面说一下大体做法<br>‘’ set.seed(1024)#建立种子点<br>‘’ credit_sample &lt;- credit[order(runif(1000)), ]#抽取1000条作为样本<br>‘’ </p>
+<p>‘’ train &lt;- credit_sample[1:900, ]#按照1：9的比例设立训练集<br>‘’ test  &lt;- credit_sample[901:1000, ]#建立测试集<br>‘’<br>‘’ library(C50)<br>‘’ credit_model &lt;- C5.0(train[-17], train$default)#建立C50模型<br>‘’<br>‘’ credit_pred &lt;- predict(credit_model, test)#运用测试集来预测结果<br>‘’<br>具体结果是酱紫：<br>‘’ Total Observations in Table: 100<br>‘’<br>‘’<br>‘’                | predicted default<br>‘’ acutal default | no | yes | Row Total |<br>‘’ —————|———–|———–|———–|<br>‘’             no | 57 | 11 | 68 |<br>‘’                | 0.570 | 0.110 | |<br>‘’ —————|———–|———–|———–|<br>‘’            yes | 16 | 16 | 32 |<br>‘’                | 0.160 | 0.160 | |<br>‘’ —————|———–|———–|———–|<br>‘’   Column Total | 73 | 27 | 100 |<br>‘’ —————|———–|———–|———–|<br>可以看到应用到测试集，该模型正确率73%，只识别了实际违约贷款32人中的50%，显然不够理想。<br>在后期，对于决策树是可以用剪枝来进行修缮的，对于提高准确率，可以运用bagging、boosting和随机森林，特别的可以运用悲观剪枝法来提高模型的准确率，这是一种后剪枝的方法。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/28/R的骚图绘制/" itemprop="url">
                   R的骚图绘制
                 </a>
@@ -1138,103 +1233,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/03/Valar morghulis/" itemprop="url">
-                  Valar morghulis
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-03T04:19:11+08:00" content="2016-07-03">
-              2016-07-03
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>权利的游戏第六季完</p>
-<h2 id="权游第六集"><a href="#权游第六集" class="headerlink" title="权游第六集"></a>权游第六集</h2><hr>
-<p>不知不觉冰火已经追到第六季，之前的很多剧情都快忘记了<br>趁着还没忘光，忽然想要写写冰火里的女人们。<br>冰火里女性角色很多，瑟曦，龙妈，珊莎，梅姨…<br>她们都各有光华，或残酷冷艳，或勇敢奔放<br>其中最引人瞩目的莫过于龙妈丹妮莉丝<br>很多人将她视为是女性成长，女权意识的代表人物<br>但是在我看来，她虽然有曲折离奇的成长史，波澜壮阔的发迹史<br>却和我所理解的“女权意识”和“女性成长”仍然有差距。</p>
-<p>私心里认为，冰火里真正能够代表女性成长的角色<br>还是非狼家二小姐“二丫”莫属。<br><img src="http://img3.douban.com/view/group_topic/large/public/p39049782.jpg" alt="Arya"></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1280,7 +1278,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
