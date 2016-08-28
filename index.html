@@ -282,8 +282,11 @@
       
         
           
-            <p>无意间看到data flow上的一个常用的数据集，于是就下了下来，这是一个关于银行客户违约的数据集，这正好让我有了对C5.0实践的一个想法。<br>这个数据集中的字段：账户余额，工作年限，贷款/收入比，居住年限，年龄，其他信用记录，房产，现有贷款账户，工作类型，受抚养人，电话，违约情况<br>下面说一下大体做法<br>‘’ set.seed(1024)#建立种子点<br>‘’ credit_sample &lt;- credit[order(runif(1000)), ]#抽取1000条作为样本<br>‘’ </p>
-<p>‘’ train &lt;- credit_sample[1:900, ]#按照1：9的比例设立训练集<br>‘’ test  &lt;- credit_sample[901:1000, ]#建立测试集<br>‘’<br>‘’ library(C50)<br>‘’ credit_model &lt;- C5.0(train[-17], train$default)#建立C50模型<br>‘’<br>‘’ credit_pred &lt;- predict(credit_model, test)#运用测试集来预测结果<br>‘’<br>具体结果是酱紫：<br>‘’ Total Observations in Table: 100<br>‘’<br>‘’<br>‘’                | predicted default<br>‘’ acutal default | no | yes | Row Total |<br>‘’ —————|———–|———–|———–|<br>‘’             no | 57 | 11 | 68 |<br>‘’                | 0.570 | 0.110 | |<br>‘’ —————|———–|———–|———–|<br>‘’            yes | 16 | 16 | 32 |<br>‘’                | 0.160 | 0.160 | |<br>‘’ —————|———–|———–|———–|<br>‘’   Column Total | 73 | 27 | 100 |<br>‘’ —————|———–|———–|———–|<br>可以看到应用到测试集，该模型正确率73%，只识别了实际违约贷款32人中的50%，显然不够理想。<br>在后期，对于决策树是可以用剪枝来进行修缮的，对于提高准确率，可以运用bagging、boosting和随机森林，特别的可以运用悲观剪枝法来提高模型的准确率，这是一种后剪枝的方法。</p>
+            <p>无意间看到data flow上的一个常用的数据集，于是就下了下来，这是一个关于银行客户违约的数据集，这正好让我有了对C5.0实践的一个想法。<br>这个数据集中的字段：账户余额，工作年限，贷款/收入比，居住年限，年龄，其他信用记录，房产，现有贷款账户，工作类型，受抚养人，电话，违约情况<br>下面说一下大体做法<br>‘’ set.seed(1024)#建立种子点<br>‘’ credit_sample &lt;- credit[order(runif(1000)), ]#抽取1000条作为样本</p>
+<p>‘’ train &lt;- credit_sample[1:900, ]#按照1：9的比例设立训练集<br>‘’ test  &lt;- credit_sample[901:1000, ]#建立测试集</p>
+<p>‘’ library(C50)<br>‘’ credit_model &lt;- C5.0(train[-17], train$default)#建立C50模型</p>
+<p>‘’ credit_pred &lt;- predict(credit_model, test)#运用测试集来预测结果</p>
+<p>具体结果是酱紫：<br>‘’ Total Observations in Table: 100<br>‘’<br>‘’<br>‘’                | predicted default<br>‘’ acutal default | no | yes | Row Total |<br>‘’ —————|———–|———–|———–|<br>‘’             no | 57 | 11 | 68 |<br>‘’                | 0.570 | 0.110 | |<br>‘’ —————|———–|———–|———–|<br>‘’            yes | 16 | 16 | 32 |<br>‘’                | 0.160 | 0.160 | |<br>‘’ —————|———–|———–|———–|<br>‘’   Column Total | 73 | 27 | 100 |<br>‘’ —————|———–|———–|———–|<br>可以看到应用到测试集，该模型正确率73%，只识别了实际违约贷款32人中的50%，显然不够理想。<br>在后期，对于决策树是可以用剪枝来进行修缮的，对于提高准确率，可以运用bagging、boosting和随机森林，特别的可以运用悲观剪枝法来提高模型的准确率，这是一种后剪枝的方法。</p>
 
           
         
