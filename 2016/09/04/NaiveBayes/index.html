@@ -84,25 +84,25 @@
 
 
 
-<meta name="description" content="title: 分类算法-Naive Bayestags: R
-–
-朴素贝叶斯分类的原理：对于给出的待分类项目，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项就属于哪个分类。在这就不给出贝叶斯定理了，其实还是比较好理解的。
-那么对于朴素贝叶斯分类器的包有很多，自己用的比较顺手的就是e1071和klaR，这次以e1071为例">
+<meta name="description" content="title: 分类算法-Naive Bayes
+tags: R
+关于朴素贝叶斯朴素贝叶斯分类的原理：对于给出的待分类项目，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项就属于哪个分类。在这就不给出贝叶斯定理了，其实还是比较好理解的。
+那么对于朴素贝叶斯分类器的包有很多，自己用的比较顺手的是e1071和klaR，这次以e1071为例其中的的主要函数为naiveBayes(fo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Live's blog">
 <meta property="og:url" content="http://yoursite.com/2016/09/04/NaiveBayes/index.html">
 <meta property="og:site_name" content="Live's blog">
-<meta property="og:description" content="title: 分类算法-Naive Bayestags: R
-–
-朴素贝叶斯分类的原理：对于给出的待分类项目，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项就属于哪个分类。在这就不给出贝叶斯定理了，其实还是比较好理解的。
-那么对于朴素贝叶斯分类器的包有很多，自己用的比较顺手的就是e1071和klaR，这次以e1071为例">
-<meta property="og:updated_time" content="2016-09-04T13:35:34.000Z">
+<meta property="og:description" content="title: 分类算法-Naive Bayes
+tags: R
+关于朴素贝叶斯朴素贝叶斯分类的原理：对于给出的待分类项目，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项就属于哪个分类。在这就不给出贝叶斯定理了，其实还是比较好理解的。
+那么对于朴素贝叶斯分类器的包有很多，自己用的比较顺手的是e1071和klaR，这次以e1071为例其中的的主要函数为naiveBayes(fo">
+<meta property="og:updated_time" content="2016-09-04T22:30:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Live's blog">
-<meta name="twitter:description" content="title: 分类算法-Naive Bayestags: R
-–
-朴素贝叶斯分类的原理：对于给出的待分类项目，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项就属于哪个分类。在这就不给出贝叶斯定理了，其实还是比较好理解的。
-那么对于朴素贝叶斯分类器的包有很多，自己用的比较顺手的就是e1071和klaR，这次以e1071为例">
+<meta name="twitter:description" content="title: 分类算法-Naive Bayes
+tags: R
+关于朴素贝叶斯朴素贝叶斯分类的原理：对于给出的待分类项目，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项就属于哪个分类。在这就不给出贝叶斯定理了，其实还是比较好理解的。
+那么对于朴素贝叶斯分类器的包有很多，自己用的比较顺手的是e1071和klaR，这次以e1071为例其中的的主要函数为naiveBayes(fo">
 
 
 
@@ -266,10 +266,15 @@
 
       
         <hr>
-<p>title: 分类算法-Naive Bayes<br>tags: R</p>
-<p>–</p>
-<p>朴素贝叶斯分类的原理：<br>对于给出的待分类项目，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项就属于哪个分类。<br>在这就不给出贝叶斯定理了，其实还是比较好理解的。</p>
-<p>那么对于朴素贝叶斯分类器的包有很多，自己用的比较顺手的就是e1071和klaR，这次以e1071为例</p>
+<p>title: 分类算法-Naive Bayes</p>
+<h2 id="tags-R"><a href="#tags-R" class="headerlink" title="tags: R"></a>tags: R</h2><hr>
+<h2 id="关于朴素贝叶斯"><a href="#关于朴素贝叶斯" class="headerlink" title="关于朴素贝叶斯"></a>关于朴素贝叶斯</h2><p>朴素贝叶斯分类的原理：<br>对于给出的待分类项目，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项就属于哪个分类。<br>在这就不给出贝叶斯定理了，其实还是比较好理解的。</p>
+<p>那么对于朴素贝叶斯分类器的包有很多，自己用的比较顺手的是e1071和klaR，这次以e1071为例<br>其中的的主要函数为naiveBayes(formula, data, laplace = 0)<br>formula: 公式的主要形式为type ~  . ，但是相互作用是不允许的(可以参照贝叶斯信念网络)<br>laplace: 正面双控制拉普拉斯平滑，默认值为0表示禁用。<br>data：数据集</p>
+<p><code>data(&quot;Glass&quot;)</code><br><code>model_01&lt;-naiveBayes( Type ~ .,data = Glass)</code><br><code>prd_test_Glass&lt;-predict(model_01, Glass[1:10,],tpye = &quot;raw&quot;)</code><br><code>prd_test_Glass</code></p>
+<p>结果如下<br><code>&gt; prd_test_Glass
+ [1] 2 1 1 1 1 1 1 1 3 1
+Levels: 1 2 3 5 6 7</code></p>
+<p>可以看到对于glass的分类有7种，而对于数据集的前十行玻璃的分类结果为： 2 1 1 1 1 1 1 1 3 1<br>那么对比下数据，实际上Glass数据集的前10种玻璃的分类都为1，说明分类失误两个，整体判断的准确率还是有的。</p>
 
       
     </div>
@@ -412,7 +417,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-R"><span class="nav-number">1.</span> <span class="nav-text">tags: R</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于朴素贝叶斯"><span class="nav-number">2.</span> <span class="nav-text">关于朴素贝叶斯</span></a></li></ol></div>
             
           </div>
         </section>
