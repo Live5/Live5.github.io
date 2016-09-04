@@ -219,7 +219,7 @@
               
                 
                 <a class="post-title-link" href="/2016/09/04/Faded/" itemprop="url">
-                  Faded
+                  关于技能树的点选问题
                 </a>
               
             
@@ -263,7 +263,7 @@
         
           
             <hr>
-<h2 id="关于电子乐"><a href="#关于电子乐" class="headerlink" title="关于电子乐"></a>关于电子乐</h2><p>当’Faded’已经响彻大街小巷，感觉真正的电子乐的时代才算是真正的到来，上海每年的风暴电音节也是让大家乐此不疲，想起了A神的炒饭手</p>
+<h2 id="数据的技能树"><a href="#数据的技能树" class="headerlink" title="数据的技能树"></a>数据的技能树</h2><p>看到之前整理的全栈技能树，这两天整理出来了关于数据人员的必备技能树，不多说了直接上图<br><img src="http://ocf3bi6ej.bkt.clouddn.com/data-tree.png" alt="data_tree"></p>
 
           
         
@@ -359,11 +359,12 @@
           
             <h2 id="关于朴素贝叶斯"><a href="#关于朴素贝叶斯" class="headerlink" title="关于朴素贝叶斯"></a>关于朴素贝叶斯</h2><p>朴素贝叶斯分类的原理：<br>对于给出的待分类项目，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项就属于哪个分类。<br>在这就不给出贝叶斯定理了，其实还是比较好理解的。</p>
 <p>那么对于朴素贝叶斯分类器的包有很多，自己用的比较顺手的是e1071和klaR，这次以e1071为例<br>其中的的主要函数为naiveBayes(formula, data, laplace = 0)<br>formula: 公式的主要形式为type ~  . ，但是相互作用是不允许的(可以参照贝叶斯信念网络)<br>laplace: 正面双控制拉普拉斯平滑，默认值为0表示禁用。<br>data：数据集</p>
-<p><code>data(&quot;Glass&quot;)</code><br><code>model_01&lt;-naiveBayes( Type ~ .,data = Glass)</code><br><code>prd_test_Glass&lt;-predict(model_01, Glass[1:10,],tpye = &quot;raw&quot;)</code><br><code>prd_test_Glass</code></p>
+<p><code>data(&quot;Glass&quot;)</code><br><code>model&lt;-naiveBayes( Type ~ .,data = Glass)</code><br><code>prd_test_Glass&lt;-predict(model, Glass[1:10,],tpye = &quot;raw&quot;)</code><br><code>prd_test_Glass</code></p>
 <p>结果如下<br><code>&gt; prd_test_Glass
  [1] 2 1 1 1 1 1 1 1 3 1
 Levels: 1 2 3 5 6 7</code></p>
 <p>可以看到对于glass的分类有7种，而对于数据集的前十行玻璃的分类结果为： 2 1 1 1 1 1 1 1 3 1<br>那么对比下数据，实际上Glass数据集的前10种玻璃的分类都为1，说明分类失误两个，整体判断的准确率还是有的。</p>
+<p>总结一下，之前看到有大神用Titanic数据集做朴素贝叶斯分类，得到最后船上的人符合什么样的条件最容易获救，还是比较有意义的。对于朴素贝叶斯整体而言还能做的还有很多，例如根据用户行为的社交网络、网络游戏的流失分析依然可以用到朴素贝叶斯分类器。</p>
 
           
         
