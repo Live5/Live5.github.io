@@ -84,19 +84,25 @@
 
 
 
-<meta name="description" content="关于电子乐当’Faded’已经响彻大街小巷，感觉真正的电子乐的时代才算是真正的到来，上海每年的风暴电音节也是让大家乐此不疲，想起了A神的炒饭手
-这个坑得慢慢填，最近要填的坑实在太多，先把R的坑填上再说，知乎还真是个好东西自从有了值乎已经效率高多了,R对于我来说还是不够熟悉，不过经过一周的学习已经有了初步的掌握，手里画出的图也还比较像样儿，准备在下周上图，本周计划基本上完成，但是远不够完美，在磕磕">
+<meta name="description" content="title: 分类算法-Naive Bayestags: R
+–
+朴素贝叶斯分类的原理：对于给出的待分类项目，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项就属于哪个分类。在这就不给出贝叶斯定理了，其实还是比较好理解的。
+那么对于朴素贝叶斯分类器的包有很多，自己用的比较顺手的就是e1071和klaR，这次以e1071为例">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Faded">
-<meta property="og:url" content="http://yoursite.com/2016/08/07/Faded/index.html">
+<meta property="og:title" content="Live's blog">
+<meta property="og:url" content="http://yoursite.com/2016/09/04/NaiveBayes/index.html">
 <meta property="og:site_name" content="Live's blog">
-<meta property="og:description" content="关于电子乐当’Faded’已经响彻大街小巷，感觉真正的电子乐的时代才算是真正的到来，上海每年的风暴电音节也是让大家乐此不疲，想起了A神的炒饭手
-这个坑得慢慢填，最近要填的坑实在太多，先把R的坑填上再说，知乎还真是个好东西自从有了值乎已经效率高多了,R对于我来说还是不够熟悉，不过经过一周的学习已经有了初步的掌握，手里画出的图也还比较像样儿，准备在下周上图，本周计划基本上完成，但是远不够完美，在磕磕">
-<meta property="og:updated_time" content="2016-08-21T20:45:37.000Z">
+<meta property="og:description" content="title: 分类算法-Naive Bayestags: R
+–
+朴素贝叶斯分类的原理：对于给出的待分类项目，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项就属于哪个分类。在这就不给出贝叶斯定理了，其实还是比较好理解的。
+那么对于朴素贝叶斯分类器的包有很多，自己用的比较顺手的就是e1071和klaR，这次以e1071为例">
+<meta property="og:updated_time" content="2016-09-04T13:35:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Faded">
-<meta name="twitter:description" content="关于电子乐当’Faded’已经响彻大街小巷，感觉真正的电子乐的时代才算是真正的到来，上海每年的风暴电音节也是让大家乐此不疲，想起了A神的炒饭手
-这个坑得慢慢填，最近要填的坑实在太多，先把R的坑填上再说，知乎还真是个好东西自从有了值乎已经效率高多了,R对于我来说还是不够熟悉，不过经过一周的学习已经有了初步的掌握，手里画出的图也还比较像样儿，准备在下周上图，本周计划基本上完成，但是远不够完美，在磕磕">
+<meta name="twitter:title" content="Live's blog">
+<meta name="twitter:description" content="title: 分类算法-Naive Bayestags: R
+–
+朴素贝叶斯分类的原理：对于给出的待分类项目，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项就属于哪个分类。在这就不给出贝叶斯定理了，其实还是比较好理解的。
+那么对于朴素贝叶斯分类器的包有很多，自己用的比较顺手的就是e1071和klaR，这次以e1071为例">
 
 
 
@@ -117,9 +123,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/07/Faded/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/09/04/NaiveBayes/"/>
 
-  <title> Faded | Live's blog </title>
+  <title>  | Live's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -239,7 +245,7 @@
             
             
               
-                Faded
+                
               
             
           </h1>
@@ -251,8 +257,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-08-07T22:00:56+08:00" content="2016-08-07">
-              2016-08-07
+            <time itemprop="dateCreated" datetime="2016-09-04T21:25:37+08:00" content="2016-09-04">
+              2016-09-04
             </time>
           </span>
 
@@ -280,8 +286,10 @@
 
       
         <hr>
-<h2 id="关于电子乐"><a href="#关于电子乐" class="headerlink" title="关于电子乐"></a>关于电子乐</h2><p>当’Faded’已经响彻大街小巷，感觉真正的电子乐的时代才算是真正的到来，上海每年的风暴电音节也是让大家乐此不疲，想起了A神的炒饭手</p>
-<p>这个坑得慢慢填，最近要填的坑实在太多，先把R的坑填上再说，知乎还真是个好东西自从有了值乎已经效率高多了,R对于我来说还是不够熟悉，不过经过一周的学习已经有了初步的掌握，手里画出的图也还比较像样儿，准备在下周上图，本周计划基本上完成，但是远不够完美，在磕磕绊绊的路上也算是慢慢前进中，非常喜欢自己这个学习的过程，知道了回归分析，grep是个好函数,apriori，，data.table 中的fread（）是非常好用的函数，可以读取超大的数据集，简直是受益无穷<br>这两天的计划很严峻，写resume，写blog然后再理论上进行学习</p>
+<p>title: 分类算法-Naive Bayes<br>tags: R</p>
+<p>–</p>
+<p>朴素贝叶斯分类的原理：<br>对于给出的待分类项目，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项就属于哪个分类。<br>在这就不给出贝叶斯定理了，其实还是比较好理解的。</p>
+<p>那么对于朴素贝叶斯分类器的包有很多，自己用的比较顺手的就是e1071和klaR，这次以e1071为例</p>
 
       
     </div>
@@ -307,17 +315,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/03/data in the midnight/" rel="next" title="stay up all night">
-                <i class="fa fa-chevron-left"></i> stay up all night
+              <a href="/2016/09/02/cowplot/" rel="next" title="多重图的新纪元-cowplot">
+                <i class="fa fa-chevron-left"></i> 多重图的新纪元-cowplot
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/22/字段总结/" rel="prev" title="字段总结">
-                字段总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -424,7 +428,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于电子乐"><span class="nav-number">1.</span> <span class="nav-text">关于电子乐</span></a></li></ol></div>
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
             
           </div>
         </section>
